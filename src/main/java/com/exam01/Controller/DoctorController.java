@@ -23,4 +23,14 @@ public class DoctorController {
         doctorService.deleteDoctor(id);
         return "Deleted doctor with id = " + id;
     }
+
+    @PutMapping("/{id}")
+    public Doctor updateDoctor(@PathVariable Long id, @RequestBody Doctor doctor) {
+        return doctorService.updateDoctor(id, doctor);
+    }
+
+    @GetMapping
+    public List<Doctor> getAllDoctors() {
+        return doctorService.getAllDoctors();
+    }
 }
